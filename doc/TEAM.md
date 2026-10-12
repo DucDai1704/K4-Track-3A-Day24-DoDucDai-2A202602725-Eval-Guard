@@ -8,7 +8,7 @@ Trưởng nhóm/người nộp: Đỗ Đức Đại - 2A202602725
 
 Ngày lab/deadline áp dụng: 2026-10-12 23:59 — Asia/Ho_Chi_Minh (UTC+07:00)
 
-Commit dùng để chấm: b9f8d5b53bc4f94899aa30fdc52c30be0e96eb6d
+Commit dùng để chấm: 4efde83b448bb9c1519abd5d672dabd7a736e509
 
 Mỗi nhóm nộp một repo. Điền đủ thành viên và một mục INDIVIDUAL cho từng người.
 Thành viên thực hiện độc lập toàn bộ các phase của dự án.
