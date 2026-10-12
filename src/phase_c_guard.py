@@ -25,8 +25,15 @@ def setup_presidio():
     Các recognizers mặc định đã có sẵn: EMAIL, PHONE_NUMBER (international), ...
     """
     try:
-        from presidio_analyzer import AnalyzerEngine, RecognizerRegistry, Pattern, PatternRecognizer
-        from presidio_anonymizer import AnonymizerEngine
+        import importlib
+        pa = importlib.import_module("presidio_analyzer")
+        AnalyzerEngine = pa.AnalyzerEngine
+        RecognizerRegistry = pa.RecognizerRegistry
+        Pattern = pa.Pattern
+        PatternRecognizer = pa.PatternRecognizer
+
+        panon = importlib.import_module("presidio_anonymizer")
+        AnonymizerEngine = panon.AnonymizerEngine
 
         cccd_recognizer = PatternRecognizer(
             supported_entity="VN_CCCD",
@@ -115,7 +122,10 @@ def setup_nemo_rails():
         rails.co    — câu từ chối Colang 1.0; built-in self-check flows được bật trong YAML
     """
     try:
-        from nemoguardrails import RailsConfig, LLMRails
+        import importlib
+        nr = importlib.import_module("nemoguardrails")
+        RailsConfig = nr.RailsConfig
+        LLMRails = nr.LLMRails
         config = RailsConfig.from_path(GUARDRAILS_CONFIG_DIR)
         rails  = LLMRails(config)
         return rails
